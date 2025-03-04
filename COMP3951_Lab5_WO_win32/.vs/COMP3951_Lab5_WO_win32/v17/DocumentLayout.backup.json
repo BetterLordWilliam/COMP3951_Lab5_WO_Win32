@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\",
+  "WorkspaceRootPath": "G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D4A25ECF-B223-4579-9D33-CC178F2751CB}|COMP3951_Lab5_WO_win32.vcxproj|D:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\COMP3951_Lab5_WO_win32.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{D4A25ECF-B223-4579-9D33-CC178F2751CB}|COMP3951_Lab5_WO_win32.vcxproj|G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\COMP3951_Lab5_WO_win32.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D4A25ECF-B223-4579-9D33-CC178F2751CB}|COMP3951_Lab5_WO_win32.vcxproj|solutionrelative:COMP3951_Lab5_WO_win32.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -13,21 +13,31 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
+          "DockedWidth": 1054,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "COMP3951_Lab5_WO_win32.cpp",
-              "DocumentMoniker": "D:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\COMP3951_Lab5_WO_win32.cpp",
+              "DocumentMoniker": "G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\COMP3951_Lab5_WO_win32.cpp",
               "RelativeDocumentMoniker": "COMP3951_Lab5_WO_win32.cpp",
-              "ToolTip": "D:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\COMP3951_Lab5_WO_win32.cpp",
+              "ToolTip": "G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\COMP3951_Lab5_WO_win32.cpp",
               "RelativeToolTip": "COMP3951_Lab5_WO_win32.cpp",
-              "ViewState": "AgIAALQAAAAAAAAAAAAEwMgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAEwMgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-03T22:26:47.592Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1029,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }
