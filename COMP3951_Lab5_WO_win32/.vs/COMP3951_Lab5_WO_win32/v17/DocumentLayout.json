@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D4A25ECF-B223-4579-9D33-CC178F2751CB}|COMP3951_Lab5_WO_win32.vcxproj|G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\COMP3951_Lab5_WO_win32.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D4A25ECF-B223-4579-9D33-CC178F2751CB}|COMP3951_Lab5_WO_win32.vcxproj|solutionrelative:COMP3951_Lab5_WO_win32.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D4A25ECF-B223-4579-9D33-CC178F2751CB}|COMP3951_Lab5_WO_win32.vcxproj|G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D4A25ECF-B223-4579-9D33-CC178F2751CB}|COMP3951_Lab5_WO_win32.vcxproj|solutionrelative:Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,51 +13,33 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1054,
-          "SelectedChildIndex": -1,
-          "Children": []
-        },
-        {
           "DockedWidth": 1029,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "85cde3f4-b070-48f0-9284-e41aa1982a9d",
-        "Display": 1,
-        "X": 360,
-        "Y": 234,
-        "Width": 1400,
-        "Height": 973,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "COMP3951_Lab5_WO_win32.cpp",
-              "DocumentMoniker": "G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\COMP3951_Lab5_WO_win32.cpp",
-              "RelativeDocumentMoniker": "COMP3951_Lab5_WO_win32.cpp",
-              "ToolTip": "G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\COMP3951_Lab5_WO_win32.cpp",
-              "RelativeToolTip": "COMP3951_Lab5_WO_win32.cpp",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAMgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-03T22:26:47.592Z",
+              "Title": "Resource.h",
+              "DocumentMoniker": "G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\Resource.h",
+              "RelativeDocumentMoniker": "Resource.h",
+              "ToolTip": "G:\\BCIT\\CST\\Sem3\\COMP3951\\labs\\COMP3951_Lab5_WO_Win32\\COMP3951_Lab5_WO_win32\\Resource.h",
+              "RelativeToolTip": "Resource.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-05T02:34:05.287Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             }
           ]
         }

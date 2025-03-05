@@ -3,6 +3,7 @@
 
 #include "framework.h"
 #include "COMP3951_Lab5_WO_win32.h"
+#include <commdlg.h>
 #include <iostream>
 
 #define MAX_LOADSTRING 100
@@ -12,16 +13,23 @@ HINSTANCE hInst;                                // current instance
 WCHAR szTitle[MAX_LOADSTRING];                  // The title bar text
 WCHAR szWindowClass[MAX_LOADSTRING];            // the main window class name
 
+bool isDrawing = false, isMain = true;          // Drawing flag
+POINT prevPoint, currentPoint;                  // Mouse positions
+
+COLORREF windowColor    = RGB(255, 255, 255);   // Window color, default white
+COLORREF pen1Color      = RGB(0, 0, 0);         // Pen 1 color, default black
+COLORREF pen2Color      = RGB(255, 255, 255);   // Pen 2 color, default white
+int pen1Style = PS_SOLID, pen1Thick = 2;        // Pen 1 defaults
+int pen2Style = PS_SOLID, pen2Thick = 20;       // Pen 2 defaults
+
+HPEN hPen1 = CreatePen(pen1Style, pen1Thick, pen1Color);    // Pen 1 setup
+HPEN hPen2 = CreatePen(pen2Style, pen2Thick, pen2Color);    // Pen 2 setup
+
 // Forward declarations of functions included in this code module:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
-
-// Which pen shold be used
-bool isDrawing = false, isMain = true;
-// Previous and current points
-POINT prevPoint, currentPoint;
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -131,6 +139,61 @@ void DrawLine(HDC hdc, int currentX, int currentY)
 	prevPoint = currentPoint;
 }
 
+/// <summary>
+/// Colour picker dialog, set the background colour.
+/// </summary>
+/// <param name="hWnd"></param>
+/// <returns></returns>
+void PickColor(HWND hWnd, COLORREF* windowColor)
+{
+    // Display the color picker dialog
+    CHOOSECOLOR cc;
+    static COLORREF acrCustClr[16]; // array of custom colors 
+
+    ZeroMemory(&cc, sizeof(cc));
+    cc.lStructSize = sizeof(cc);
+    cc.hwndOwner = hWnd;
+    cc.lpCustColors = (LPDWORD)acrCustClr;
+    cc.rgbResult = *windowColor;
+    cc.Flags = CC_FULLOPEN | CC_RGBINIT;
+
+    if (ChooseColor(&cc) == TRUE)
+    {
+        *windowColor = cc.rgbResult;
+        // Change the background color of the window
+        SetClassLongPtr(hWnd, GCLP_HBRBACKGROUND, (LONG_PTR)CreateSolidBrush(*windowColor));
+        InvalidateRect(hWnd, NULL, TRUE);
+    }
+}
+
+/// <summary>
+/// Generic method for changing the colour of the pen.
+/// </summary>
+/// <param name="hWnd"></param>
+/// <param name="pen"></param>
+/// <param name="pencolor"></param>
+/// <param name="penStyle"></param>
+/// <param name="penThick"></param>
+void PickPenColor(HWND hWnd, HPEN* pen, COLORREF* pencolor, int penStyle, int penThick)
+{
+    // Display the color picker dialog
+    CHOOSECOLOR cc;
+    static COLORREF acrCustClr[16]; // array of custom colors 
+
+    ZeroMemory(&cc, sizeof(cc));
+    cc.lStructSize = sizeof(cc);
+    cc.hwndOwner = hWnd;
+    cc.lpCustColors = (LPDWORD)acrCustClr;
+    cc.rgbResult = RGB(255, 255, 255);
+    cc.Flags = CC_FULLOPEN | CC_RGBINIT;
+
+    if (ChooseColor(&cc) == TRUE)
+    {
+        *pencolor = cc.rgbResult;
+        *pen = (CreatePen(penStyle, penThick, *pencolor));
+    }
+}
+
 //
 //  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)
 //
@@ -143,17 +206,17 @@ void DrawLine(HDC hdc, int currentX, int currentY)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    static HPEN hPen1, hPen2;
-
     switch (message)
     {
     case WM_CREATE:
-    {
-        // Red color pen
-        hPen1 = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));
-        // White color pen
-		hPen2 = CreatePen(PS_SOLID, 20, RGB(255, 255, 255));
-    }
+        {
+            // Add change colour menu
+            HMENU hMenu = GetMenu(hWnd);
+            AppendMenu(hMenu, MF_STRING, IDM_CHANGECOLOR, L"Change Window Color");
+            AppendMenu(hMenu, MF_STRING, IDM_CHANGEPEN1COLOR, L"Change Pen1 Color");
+            AppendMenu(hMenu, MF_STRING, IDM_CHANGEPEN2COLOR, L"Change Pen2 Color");
+        }
+        break;
     case WM_COMMAND:
         {
             int wmId = LOWORD(wParam);
@@ -165,6 +228,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
                 break;
             case IDM_EXIT:
                 DestroyWindow(hWnd);
+                break;
+            case IDM_CHANGECOLOR:
+                PickColor(hWnd, &windowColor);
+                break;
+            case IDM_CHANGEPEN1COLOR:
+                PickPenColor(hWnd, &hPen1, &pen1Color, pen1Style, pen1Thick);
+                break;
+            case IDM_CHANGEPEN2COLOR:
+                PickPenColor(hWnd, &hPen2, &pen2Color, pen2Style, pen2Thick);
                 break;
             default:
                 return DefWindowProc(hWnd, message, wParam, lParam);
